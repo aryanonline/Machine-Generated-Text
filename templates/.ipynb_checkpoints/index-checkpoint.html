@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .input-box {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .analyze-btn {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AI Text Analyzer</h1>
+    </div>
+    <div class="container">
+        <form action="{{url_for('predict')}}" method="post">
+            <textarea name="text-box" class="input-box" rows="8" placeholder="Enter text here..."></textarea>
+            <button type="submit" class="analyze-btn">Analyze</button>
+        </form>
+        <div class="results">{{prediction_text}}</div>
+    </div>
+    <div class="footer">
+        <p>Contact | Terms of Service | Privacy Policy</p>
+    </div>
+</body>
+</html>
